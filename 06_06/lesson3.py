@@ -1,6 +1,7 @@
 import requests
 from requests import Response
-import pandas as pd
+import pandas as pd #pd（小名） 就是代表 pandas這個套件
+from pandas import DataFrame
 from pathlib import Path
 
 
@@ -96,9 +97,9 @@ def main():
         data:list[dict] = response.json() # 使用 Response 實體的 json() 方法，會傳出 list 的資料結構
 
         # list[dict] -> DataFrame
-        df = pd.DataFrame(data)
+        df:DataFrame = pd.DataFrame(data=data)
 
-        print(df.head())
+        print(df.head(10))
 
         output_file = Path(__file__).with_name("youbike_report.pdf")
         export_to_pdf(df, output_file)
