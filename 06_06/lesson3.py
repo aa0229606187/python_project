@@ -99,7 +99,8 @@ def main():
         # list[dict] -> DataFrame
         df:DataFrame = pd.DataFrame(data=data)
 
-        print(df.head(10))
+        #print(df.head(10))
+        print(df.tail())#它預設值是5筆 tail代表最後的幾筆資料
 
         output_file = Path(__file__).with_name("youbike_report.pdf")
         export_to_pdf(df, output_file)
