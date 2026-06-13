@@ -1,8 +1,10 @@
 from pathlib import Path
-import tkinter as tk
-from tkinter import ttk, messagebox
-
 import pandas as pd
+from http.server import HTTPServer, BaseHTTPRequestHandler
+import json
+import urllib.parse
+import threading
+import webbrowser
 
 
 class ScoreViewerApp:
