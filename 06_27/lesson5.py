@@ -26,7 +26,13 @@ pg.setConfigOption('background', '#18181b')  # 設定圖表背景色為深灰色
 pg.setConfigOption('foreground', '#d4d4d8')  # 設定圖表前景色為淺灰色 (Zinc 300)
 pg.setConfigOptions(antialias=True)          # 預設啟用抗鋸齒以提供平滑線條
 
-# 現代化深色 UI 樣式表 (CSS/QSS)
+
+# MODERN_STYLE 是一個「多行字串」變數，裡面寫的是 QSS 語法
+# QSS = Qt Style Sheet，長得很像 CSS，專門用來幫 PySide6 的視窗元件「化妝」
+# 三個雙引號 """...""" 是 Python 的多行字串語法，可以跨行寫內容
+# 裡面的 "QMainWindow"、"QLabel" 這些是 Qt 元件的名稱
+# 大括號 { } 裡面放的是要套用的樣式規則
+# 這整個字串最後會透過 setStyleSheet(MODERN_STYLE) 套用到整個視窗
 MODERN_STYLE = """
 QMainWindow {
     background-color: #09090b;
